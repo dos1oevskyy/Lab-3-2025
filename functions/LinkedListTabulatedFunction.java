@@ -216,7 +216,7 @@ public class LinkedListTabulatedFunction implements TabulatedFunctionImp {
     @Override
     public FunctionPoint getPoint(int index) {
         FunctionNode node = getNodeByIndex(index);
-        return node.getPoint();
+        return new FunctionPoint(node.getPoint().getX(), node.getPoint().getY());
     }
     @Override
     public void setPoint(int index, FunctionPoint point) throws InappropriateFunctionPointException {
@@ -230,8 +230,9 @@ public class LinkedListTabulatedFunction implements TabulatedFunctionImp {
         if (index < size - 1 && point.getX() >= getPoint(index + 1).getX()) {
             throw new InappropriateFunctionPointException("X должен строго возрастать");
         }
+
         FunctionNode node = getNodeByIndex(index);
-        node.setPoint(point);
+        node.setPoint(new FunctionPoint(point.getX(), point.getY()));
     }
     @Override
     public double getPointX(int index) {

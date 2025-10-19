@@ -49,8 +49,8 @@ public class Main {
             function.addPoint(new FunctionPoint(7, Math.log10(7)));
             System.out.println("Количество точек после добавления: " + function.getPointsCount());
 
-            System.out.println("\nУдаляем точку с индексом 1:");
-            function.deletePoint(1);
+            System.out.println("\nУдаляем точку с индексом 0:");
+            function.deletePoint(0);
             System.out.println("Количество точек после удаления: " + function.getPointsCount());
 
             System.out.println("\nИтоговая информация о точках:");
